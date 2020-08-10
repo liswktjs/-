@@ -1,0 +1,124 @@
+class MaxHeap:
+    def __init__(self,data):
+        #파이썬으로 array를 활용해서 MaxHeap을 구현할 것이다 
+        #0번째에 None을 할당하고 1부터 data들을 배당하여 직관적으로 이해하기 쉽게 한다 
+        self.heap_array=list()
+        self.heap_array.append(None)
+        self.heap_array.append(data)
+
+    def insertHeap(self,data):
+        #길이가 0이라는 것은 초기화, heap이 생성이 안되어 있다는 것이기 때문에 
+        #heap을 생성하고 데이터를 1번 자리부터 넣어준다 
+        if len(self.heap_array) == 0:
+            self.heap_array.appned(None)
+            self.heap_array.append(data)
+            return False
+
+        #현재 배열의 맨 마지막 노드에 자리를 만들어서 새롭게 들어온 data를 맨 마지막에 임시로 위치하게 한다 
+        self.heap_array.append(data)
+        #새롭게 들어온 data는 배열의 맨 마지막에 들어가 있기 때문에, index는 heap_array 길이의 -1 이다 
+        newNode_idx = len(self.heap_array) - 1
+
+        #새로 들어온 데이터가 root node 보다 크거나 , parent node보다 클 수 있기 때문에 
+        #노드간 크기를 비교하여 node 위치들을 조정해야한다 
+        while self.compareNode_insert(newNode_idx):
+            #newNode의 value가 더 큰 경우에만이 while문이 실행된다 
+            parentNode_idx = newNode_idx // 2
+            #위치를 바꾸어준다 
+            self.heap_array[newNode_idx], self.heap_array[parentNode_idx] = self.heap_array[parentNode_idx], self.heap_array[newNode_idx]
+            newNode_idx = parentNode_idx
+        
+        return True 
+
+    def compareNode_insert(self,newNode_idx):
+        if newNode_idx <= 1:
+            return False
+        #힙은 완전이진트리이기 때문에 parent node의 index가 child node(=new node의 index)의 index의 2로 나눈 몫이다
+        parentNode_idx = newNode_idx // 2
+
+        #parentNode 의 value와 newNode value를 비교한다 
+        if self.heap_array[newNode_idx] > self.heap_array[parentNode_idx]:
+            #newNode의 value가 더 클 경우 위치를 바꾸어 주어야 하기 때문에 true를 반환한다 
+            return True
+        else:
+            #parentNode의 value가 더 큰 경우 위치를 바꿀 필요가 없다 
+            return False 
+
+
+    def deleteHeap(self):
+        #현재 heap에 저장된 데이터가 없기 때문에 데이터를 반환할 수 없다 
+        if len(self.heap_array) <= 1:
+            return None
+
+
+        return_data = self.heap_array[1]
+        #heap자료구조에서 데이터를 가져올때에는 root node에서 가져와야 하므로 
+        #index 가 1 인 자료를 return 해야 한다 
+
+        #root node가 비어있는 상태이기 때문에 맨 마지막의 노드를 임시로 root node에 넣고 
+        #node끼리 크기를 비교하여 자리를 조정한다 
+
+        #파이썬에서 index -1은 배열의 맨 마지막 element를 가리킨다 
+        temp_data = self.heap_array[-1]
+        #루트 node에 마지막 노드를 임의로 배치한다 
+        self.heap_array[1] = self.heap_array[-1]
+        #맨 마지막 노드는 root node에 배당이 되어 있는 상태이기 때문에 삭제해준다 
+        del self.heap_array[-1]
+
+        #1번 루트 노드 부터 child node와 크기를 차례대로 비교한다 
+        parent_idx = 1
+        child_idx = 2 
+
+        while (child_idx <= len(self.heap_array)):
+
+            #오른쪽 자식 노드는 없고 왼쪽 자식 노드만 존재할 때에 
+            if child_idx + 1 >= len(self.heap_array):
+                if self.heap_array[parent_idx] < self.heap_array[child_idx]:
+                     self.heap_array[child_idx], self.heap_array[parent_idx] = self.heap_array[parent_idx],self.heap_array[child_idx]
+                else:
+                    break
+            #오른쪽 자식 노드와 왼쪽 자식 노드가 모두 존재할 때에
+            #왼쪽 자식 노드가 오른쪽 자식 노드 보다 value가 클 때에  
+            elif self.heap_array[child_idx] >= self.heap_array[child_idx + 1]:
+                if self.heap_array[child_idx] > self.heap_array[parent_idx]:
+                    self.heap_array[child_idx], self.heap_array[parent_idx] = self.heap_array[parent_idx], self.heap_array[child_idx]
+                else:
+                    break
+            #오른쪽 자식 노드가 왼쪽 자식 노드보다 value가 더 클때에 
+            else:
+                if self.heap_array[child_idx + 1] > self.heap_array[parent_idx]:
+                    self.heap_array[child_idx + 1], self.heap_array[parent_idx] = self.heap_array[parent_idx], self.heap_array[child_idx + 1]
+                else:
+                    break            
+
+            #value 비교를 통해서 위치가 바뀌었을 때에 parent_idx와 child_idx의 값도 바꾸어 줘야 한다
+            #기존 parent의 left child right child위치로 모두 가서 비교를 해야하기 때문에 parent_idx 의 크기를 1만 키운다  
+            parent_idx = parent_idx + 1
+            child_idx = parent_idx * 2 
+        
+        return return_data
+
+    def readHeap(self):
+        for index  in range(len(self.heap_array) -1):
+            print(self.heap_array[index + 1])
+
+
+#제대로 코딩이 되었는지 테스트 해보기 위해 임의의 숫자를 넣어보기 
+heap_ex = MaxHeap(15)
+heap_ex.insertHeap(20)
+heap_ex.insertHeap(29)
+heap_ex.insertHeap(16)
+heap_ex.insertHeap(3)
+heap_ex.insertHeap(36)
+
+#순서 36, 16, 29, 15, 3, 20 
+heap_ex.readHeap()
+
+#삭제 예시 
+print("현재 heap에서 가장 큰 값(=삭제되는 값): ")
+delete_value = heap_ex.deleteHeap()
+print(delete_value)
+
+#삭제후 순서 29 16 20 15 3
+print("삭제 된 이후에 heap: ")
+heap_ex.readHeap()
