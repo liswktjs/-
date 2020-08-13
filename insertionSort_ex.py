@@ -11,7 +11,7 @@ def insertSort(data):
                 break 
 
     print("삽입정렬이 완료된 배열 결과: ")
-    for index3 in range(len(data) -1):
+    for index3 in range(len(data)):
         print(data[index3])
 
 
