@@ -165,3 +165,12 @@ pivot을 어떻게 설정 하냐에 따라서 방법이 조금 씩 바뀐다
 - 파이썬에서 리스트 원소 내림차순으로 정렬하는 방법 
 
 : array = sorted(array, reverse=True) 
+
+- 파이썬에서 리스트의 원소로 리스트나 튜플이 있을때 내림차순으로 정렬하는 방법
+
+(*튜플: 튜플의 경우 한번 선언이 되면 변경이 불가능하다  ()를 사용하여 선언을 한다)
+
+: result = sorted(array, key = lambda value: value[1], reverse=True) 
+
+(*key=lambda value: value[1] 에서의 lambda는 람다 함수로 lambda 매개변수 : 결과(return 값) 이다) 
+
