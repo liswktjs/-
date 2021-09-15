@@ -292,7 +292,7 @@ input_data = sys.stdin.readline().rstrip()
 
 import heapq     queue = []
 
-heapq.heappush(queue,[노드,거리])  ->queue리스트에 heap형태로 데이터를 넣는다는 의미 
+heapq.heappush(queue,[거리,노드])  ->queue리스트에 heap형태로 데이터를 넣는다는 의미 
 
 heapq.heappop(queue) -> 데이터를 하나씩 뽑는다 (value가 작은 순서대로 정렬이 되어서 데이터가 출력이 된다)
 
