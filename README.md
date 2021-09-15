@@ -376,3 +376,5 @@ ex) a= 46 bin(a) = '0b101110'
 -  파이썬 dict value값 기준으로 정렬하기 
 
 sorted(dict.items(), key=lambda x : x[1]) 오름차순 / sorted(dict.items(), key=lambda x : x[1], reverse=True) 내림차순 
+
+key를 기준으로 할때에는 sorted(dict.items(), key =lambda x : x[0])
