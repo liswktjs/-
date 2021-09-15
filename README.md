@@ -373,4 +373,6 @@ ex) a= 46 bin(a) = '0b101110'
 
 문자열.rjust(전체 자리 숫자, 공백이 있을 경우 공백을 채울 리스트) 
 
+-  파이썬 dict value값 기준으로 정렬하기 
 
+sorted(dict.items(), key=lambda x : x[1]) 오름차순 / sorted(dict.items(), key=lambda x : x[1], reverse=True) 내림차순 
