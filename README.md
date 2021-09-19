@@ -412,3 +412,19 @@ old_arr = [(1,2), (3,4), (5,6), (7,8)]
 : new_arr = sorted(old_arr, key = lambda x : (x[0], -x[1]))
 
 -> x[0]은 아이템의 첫번째 요소를 기준으로 오름차순, -x[1]은 아이템의 두번째 요소를 기준으로 내림차순
+
+⏰ 2021.09.19 프로그래머스 알고리즘 문제풀이 (+ 외울만한 코드 정리)
+
+- 최대공약수 구하기 in 파이썬 
+
+: for i in range(min(a,b), 0, -1 ): 
+
+    if a % i == 0 and b % i == 0: print(i) -> i가 최대 공약수 
+    
+- 최소공배수 구하기 in 파이썬 
+
+: for i in range(max(a,b), (a*b)+1):
+
+    if i%a == 0 and i % b == 0 : print(i) -> i가 최소 공배수 
+    
+  
