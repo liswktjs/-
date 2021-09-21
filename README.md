@@ -467,5 +467,7 @@ collections의 Counter에서 반환되는 값끼리 - 이 가능하다
 예를 들어 두가지 배열에서 차집합을 구하고 싶을때 활용할 수 있다 
 
 import collections
+
 answer = collections.Counter(participant) - collections.Counter(completion) 
+
 list(answer.keys()) -> 차집합 원소가 든 리스트 
