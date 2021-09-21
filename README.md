@@ -454,3 +454,6 @@ slot ) 한개의 데이터를 저장할 수 있는 공간
 
 (*저장한 데이터에 대해 key를 추출할 수 있는 별도 함수도 존재할 수 있다) 
 
+- enumerate 함수 : 리스트가 있는 경우 index와 value를 전달하는 기능을 가진 함수이다 
+
+ex) for i , value in enumerate(list변수 이름) : 
