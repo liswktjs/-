@@ -457,3 +457,15 @@ slot ) 한개의 데이터를 저장할 수 있는 공간
 - enumerate 함수 : 리스트가 있는 경우 index와 value를 전달하는 기능을 가진 함수이다 
 
 ex) for i , value in enumerate(list변수 이름) : 
+
+- collections 모듈의 Counter함수 
+
+: collections 모듈을 import하면 Counter함수를 사용할 수 있다 이때 파라미터로 배열 데이터를 넘겨되면 각각의 element가 해당 배열에 몇개 있는지 count한 값을 'element':개수 식으로 return한다 
+
+collections의 Counter에서 반환되는 값끼리 - 이 가능하다 
+
+예를 들어 두가지 배열에서 차집합을 구하고 싶을때 활용할 수 있다 
+
+import collections
+answer = collections.Counter(participant) - collections.Counter(completion) 
+list(answer.keys()) -> 차집합 원소가 든 리스트 
