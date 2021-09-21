@@ -470,4 +470,4 @@ import collections
 
 answer = collections.Counter(participant) - collections.Counter(completion) 
 
-list(answer.keys()) -> 차집합 원소가 든 리스트 
+list(answer.keys()) -> 차집합 원소가 든 리스트 (*단 두 배열간의 길이 차이가 1일때 가능)
