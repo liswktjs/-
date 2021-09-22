@@ -471,3 +471,7 @@ import collections
 answer = collections.Counter(participant) - collections.Counter(completion) 
 
 list(answer.keys()) -> 차집합 원소가 든 리스트 (*단 두 배열간의 길이 차이가 1일때 가능)
+
+🧶 2021.09.22 프로그래머스 문제 품 
+
+- 만약 어떤 연산을 통해서 나온 결과를 리스트에 저장하여 활용할 경우, 해당 리스트의 길이가 문제가 될 수 있다. 예를들어 for문을 통해서 결과값을 저장해두는 리스트의 원소를 비교해야할 때 만약 연산의 결과가 아직 없거나 false일때는 해당 리스트는 비어 있기 때문에 len을 통해서 해당 리스트가 비어있는지 확인 절차를 걸쳐야 error을 피할 수 있다. 이럴때에는 결과값을 저장해두는 리스트에 결과값과 전혀 상관없는 값을 임시로 하나 저장을 해두면 len을 통하지 않고 search가 가능해
