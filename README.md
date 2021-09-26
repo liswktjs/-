@@ -481,3 +481,41 @@ list(answer.keys()) -> 차집합 원소가 든 리스트 (*단 두 배열간의 
 ☕ 2021.09.24 프로그래머스 문제 품 
 
 - 파이썬에서 replace , lstrip, rstrip 등 풀이 방법 중 하나로 생각해보기 노력해보기 + 정규표현식 공부 
+
+🍰 2021.09.26 피보나치 수 구하기 코드 외우기! 
+
+방법1) 재귀함수 이용하기 / 단점: n이 커지면 커질 수록 수행 시간이 기하급수적으로 늘어난다 
+
+```
+  def fibo(x):
+    if x == 1 or x == 2:
+      return 1 
+    return fibo(x-1) + fibo(x-2)
+```
+
+방법2) 메모제이션을 활용하여 풀기 
+
+```
+  d = [0] * 100
+  
+  def fibo(x):
+    if x == 1 or x == 2:
+      return 1
+    if d[x] != 0:
+      return d[x]
+    d[x] = fibo(x-1) + fibo(x-2)
+    return d[x]
+```
+
+방법3 ) 반복문을 사용하여 풀기 
+
+```
+  d = [0] * (n+1)
+  d[1] = 1
+  d[2] = 1
+  
+  for i in range(3, n+1):
+    d[i] = d[i-1] + d[i-2]
+   
+  return d[n]
+```
