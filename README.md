@@ -519,3 +519,5 @@ list(answer.keys()) -> 차집합 원소가 든 리스트 (*단 두 배열간의 
    
   return d[n]
 ```
+
+- 리스트의 자료형 map사용하여서 변환하기 : str->int 형으로 a = list(map(int,a)) or a = list(map(int,a.split(' '))
