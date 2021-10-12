@@ -577,5 +577,5 @@ sorted(data, key=itemgetter(0)) // blue는 원래 순서대로 1과 1 이 나옴
  숫자가 아닌 문자로 취급되어 정렬하게 되면 9, 34, 14, 11 식으로 정렬되게 된다 값에 상관 없이 해당 원소들의 맨앞에 오는 숫자끼리 비교를 하기 때문이다 
  (*주의점: 14, 11과 같이 앞자리 숫자가 동일하게 1, 1 이라면 원하는대로 정렬이 되지 않을 수 있으므로 추가적인 작업을 해주어야 한다)  
 
-예시)number = [str(num) for num in numbers]  -> 따로 sorted작업을 추가적으로 하지 않아도 사전형으로 배열이 된다 
+예시)number = [str(num) for num in numbers]   number.sort(reverse=True) 를 차례대로 해주게 되면 9, 34, 14 ,11 형식으로 배열이 된다 
 
