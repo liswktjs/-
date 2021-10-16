@@ -635,3 +635,10 @@ result = list(combinations_width_replacement(data,2)) #2개를 뽑는 모든 조
 
 result -> [('a','a'), ('a','b') .... ] 
 ```
+🍧 2021.10.14 프로그래머스 js level 1문제 3개 품 
+
+🥨 2021.10.16 프로그래머스 py level 2 문제 
+
+- 리스트 자료형으로 문제를 풀었는데 시간초과가 나왔을 경우 deque 사용하기!!!!!
+
+deque 사용법 from collections import deque  arr = deque([1,2,3,4]) 식으로 라이브러리 import후 사용한다 
