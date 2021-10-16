@@ -647,28 +647,22 @@ deque 사용법 from collections import deque  arr = deque([1,2,3,4]) 식으로 
 
 ```
 1. 하나의 값을 입력받을 때 
-const fs = require('fs');
-cosnt input = fs.readFileSync("/dev/stdin").toString().trim();
+const input = require('fs').readFileSync('dev/stdin').toString();
 
 2. 공백으로 구분된 한줄 값 입력받을 때 
-const fs = requrie('fs');
-const input = fs.readFileSync("/dev/stdin").toString().trim().split(" ");
+const input = require('fs').readFileSync('dev/stdin').toString().split(' ');
 
 3. 여러 줄의 값들을 입력받을 때 
-const fs = require('fs');
-const input = fs.readFileSync("/dev/stdin").toString().trim().split('\n');
+const input = require('fs').readFileSync("/dev/stdin").toString().split('\n');
 
 4. 첫번째 줄에 자연수 n을 입력받고, 그 다음줄 부터 공백으로 구분된 n 개의 값들을 입력받을 때 
-const fs = require('fs');
-const [n, ...arr] = fs.readFileSync("/dev/stdin").toString().trim().split(/\s/);
+const [n, ...arr] = require('fs').readFileSync("/dev/stdin").toString().split(/\s/);
 
 5. 첫번째 줄에 자연수 n을 입력바독, 그 다음줄 부터 n 개의 줄에 걸쳐 하나씩 값을 입력받을 때 
-const fs = require('fs');
-const n, ...arr] = fs.readFileSync("/dev/stdin").toString().trim().split('\n');
+const n, ...arr] = require('fs').readFileSync("/dev/stdin").toString().split('\n');
 
 6. 하나의 값 또는 공백으로 구분된 여러 값들을 여러 줄에 걸쳐 섞여서 입력받을 때 
-const fs = require('fs');
-const input = fs.readFileSync("/dev/stdin").toString().trim().split(/\s/);
+const input = require('fs').readFileSync("/dev/stdin").toString().split(/\s/);
 const n = input[0];
 const n_arr = input.slice(1, n+1);
 const [m, ...m_arr] = input.slice(n+1);
