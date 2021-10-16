@@ -637,8 +637,39 @@ result -> [('a','a'), ('a','b') .... ]
 ```
 🍧 2021.10.14 프로그래머스 js level 1문제 3개 품 
 
-🥨 2021.10.16 프로그래머스 py level 2 문제 
+🥨 2021.10.16 프로그래머스 py level 2 문제 백준 문제 
 
 - 리스트 자료형으로 문제를 풀었는데 시간초과가 나왔을 경우 deque 사용하기!!!!!
 
 deque 사용법 from collections import deque  arr = deque([1,2,3,4]) 식으로 라이브러리 import후 사용한다 
+
+- 백준에서 js (node.js) 입력 받는 법 
+
+```
+1. 하나의 값을 입력받을 때 
+const fs = require('fs');
+cosnt input = fs.readFileSync("/dev/stdin").toString().trim();
+
+2. 공백으로 구분된 한줄 값 입력받을 때 
+const fs = requrie('fs');
+const input = fs.readFileSync("/dev/stdin").toString().trim().split(" ");
+
+3. 여러 줄의 값들을 입력받을 때 
+const fs = require('fs');
+const input = fs.readFileSync("/dev/stdin").toString().trim().split('\n');
+
+4. 첫번째 줄에 자연수 n을 입력받고, 그 다음줄 부터 공백으로 구분된 n 개의 값들을 입력받을 때 
+const fs = require('fs');
+const [n, ...arr] = fs.readFileSync("/dev/stdin").toString().trim().split(/\s/);
+
+5. 첫번째 줄에 자연수 n을 입력바독, 그 다음줄 부터 n 개의 줄에 걸쳐 하나씩 값을 입력받을 때 
+const fs = require('fs');
+const n, ...arr] = fs.readFileSync("/dev/stdin").toString().trim().split('\n');
+
+6. 하나의 값 또는 공백으로 구분된 여러 값들을 여러 줄에 걸쳐 섞여서 입력받을 때 
+const fs = require('fs');
+const input = fs.readFileSync("/dev/stdin").toString().trim().split(/\s/);
+const n = input[0];
+const n_arr = input.slice(1, n+1);
+const [m, ...m_arr] = input.slice(n+1);
+```
