@@ -667,3 +667,16 @@ const n = input[0];
 const n_arr = input.slice(1, n+1);
 const [m, ...m_arr] = input.slice(n+1);
 ```
+
+🤣 2021.10.17 자료구조 인강 수강 
+
+- enumerate함수 : enumerate는 열거하다 라는 뜻으로 리스트가 있는 경우 순서와 리스트의 값을 전달하는 역할을 한다 순서가 있는 자료형 (list, set, tuple, dictionary, string)을 입력받아 인덱스 값을 포함하는 enumerate 객체를 리턴한다 
+
+예시 
+```
+data = enumerate([1,2,3])
+for i, value in data:
+  print(i,value)
+  
+-> 0,1 / 1, 2 / 2 ,3 
+```
