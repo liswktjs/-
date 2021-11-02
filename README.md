@@ -691,3 +691,5 @@ for i, value in data:
 🥗 2021.10.27 
 
 for i in range(len(arr)) 보다 for i in arr가 시간 이 덜 소요 된다 
+
+🎏 2021.11.02 py level 2 문제 3개 
