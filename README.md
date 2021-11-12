@@ -426,3 +426,9 @@ arr = [
 ]
 arr.sort(compare('rate')) // 어떤 것을 기준으로 배열 할 것인지 파라미터로 넘겨주기 
 ```
+
+- js 에서 문자열 배열로 만들 때 
+```
+let arr = Array.from('Hello');
+// arr = ['H','e','l','l','o']
+```
